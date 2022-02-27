@@ -1,0 +1,47 @@
+% language=uk
+
+\startcomponent help-examples
+
+\environment help-environment
+
+\startsection[title=Examples]
+
+\setupTABLE [frame=off]
+\setupTABLE[row][each][align=center, bottomframe=on]
+\setupTABLE[row][first] [style=\bf, topframe=on, background=color, backgroundcolor=gray]
+\setupTABLE[row][2,3,4][height=7cm]
+
+\setupTABLE[column][each][align={middle,lohi}]
+\setupTABLE[column][1,3][width=.2\textwidth]
+\setupTABLE[column][2][width=.6\textwidth]
+
+\bTABLE[align={middle,lohi}]
+    \bTR
+        \bTD Selected items \eTD
+        \bTD Renaming options \eTD
+        \bTD Result \eTD
+    \eTR
+    \bTR
+        \bTD \externalfigure[example-1-selected-items.png][scale=800] \eTD
+        \bTD \externalfigure[example-1-options.png][scale=800] \eTD
+        \bTD \externalfigure[example-1-results.png][scale=800] \eTD
+    \eTR
+    
+    \bTR
+        \bTD \externalfigure[example-2-selected-items.png][scale=800] \eTD
+        \bTD \externalfigure[example-2-options.png][scale=800] \eTD
+        \bTD \externalfigure[example-2-results.png][scale=800] \eTD
+    \eTR
+    
+    \bTR
+        \bTD \externalfigure[example-3-selected-items.png][scale=800] \eTD
+        \bTD \externalfigure[example-3-options.png][scale=800] \eTD
+        \bTD \externalfigure[example-3-results.png][scale=800] \eTD
+    \eTR  
+    
+\eTABLE
+
+
+\stopsection
+
+\stopcomponent

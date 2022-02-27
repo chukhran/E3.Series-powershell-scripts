@@ -1,0 +1,74 @@
+% language=uk
+
+\startcomponent help-how-to-run
+
+\environment help-environment
+
+\startsection[title= How to run the script]
+
+The script can be launched in several ways:
+
+\startitemize
+\item as an external script from the console window
+\item as an Add-on from \E\
+\stopitemize
+
+
+\startsubsection[title=Launching the script in the console window]
+The script can be launched either from {\unhyphenated\it Windows~PowerShell~ISE} or the console window. 
+
+\placefigure
+[here]
+[fig:ps-console]
+{Launching the script from ps-console directly}
+{\externalfigure[ps-console.png][scale=700]}
+
+\placefigure
+[here]
+[fig:ps-ise]
+{Launching the script from Windows PowerShell ISE}
+{\externalfigure[ps-ise.png][scale=700]}
+\stopsubsection
+
+They're the easiest ways but are not always convenient.
+
+\startsubsection[title=Launcher for PowerShell scripts]
+PowerShell is a task automation solution made up of a command-line shell, a scripting language. When the ps-script is launching, a console window shows up always even using the keys \type{powershell.exe -WindowStyle Hidden -NoLogo ... }. In the last case, a console window will still flash.
+
+To hide a console window, PowerShell has to be launched through a process that does not itself have a console window. It is known that WSH scripts do not have a console window, so VBScript can be used to launch \type{powershell.exe} in a hidden window.
+
+It was created \type{launcher.vbs} script to run {\unhyphenated\type{BatchDeviceRenaming.ps1}} script as an Add-on of {\E}.
+
+\stopsubsection
+
+\startsubsection[title=Launching the script as an Add-on]
+
+    Add-ons can be added in the {\bf Customize} dialog.
+
+    \startitemize
+    \item Select the {\bf Tools ⇨ Customize...} command from the main menu bar, and
+    \item Switch to the {\bf Add-ons} tab.
+    \stopitemize
+
+    \placefigure
+    [here]
+    [fig:customize-window]
+    {The Customize dialog --- Add-ons}
+    {\externalfigure[customize-window.png][scale=800]}
+
+%    In this dialog new commands (i.e. add-ons) can be defined. To be able to place the commands in the menu or the toolbar, first switch to the {\bf Commands} tab and activate the {\bf Add-ons} category. The {\bf Add-ons} category in the {\bf Keyboard} tab also contains a list of add-ons, that are sorted alphabetically there. When modifying the command's name in this list, it's automatically modified in the menus and toolbars.
+
+    To add a new add-on, select the folder-icon in the field's right-hand margin.
+
+    \starttabulate[|r|p|]
+        \NC {\bf Command:}      \NC Click on the button in the right-hand margin to open the {\bf Open} dialog and select \type{launcher.vbs} script as a launcher.  \NC \NR
+        \NC {\bf Arguments:}    \NC Enter either the full or a relative path of the PowerShell script. \NC \NR
+        \NC {\bf Image:}        \NC Click on this button to open the {\bf Open} dialog and select \\ \type{BatchDeviceRenaming.bmp} file. \NC \NR
+        \NC {\bf Description:}  \NC The defined description is displayed in the status bar and as an icon tooltip.\NC \NR
+    \stoptabulate
+
+\stopsubsection
+
+\stopsection
+
+\stopcomponent

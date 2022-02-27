@@ -1,0 +1,54 @@
+% language=uk
+
+\startcomponent help-gui-description
+
+\environment help-environment
+
+\startsection[title=Interface description]
+
+\placefigure
+[here]
+[fig:main-window2]
+{The main window of the script}
+{\externalfigure[main-window.png][scale=800]}
+
+\startsubsection[title=Device designation mask]
+
+With this field, you can create a definition for a new device name. The buttons below allow inserting placeholders for the original name, parts of the original name, and a counter. Placeholders are always in brackets \type{[ ]}, while all other letters (without brackets) will be placed in the new name without a change.
+
+Here is a description of all available placeholders:
+
+\starttabulate[|rT|p|]
+    \NC \color[maincolor]{[N]}      \NC An original device name; \NC \NR
+    \NC \color[maincolor]{[N\#-\#]} \NC A part of the original name. \NC \NR
+    \NC                             \NC Examples: \NC \NR
+    \NC                             \NC \type{[N1-1]} -- The first character of the original name;\NC \NR
+    \NC                             \NC \type{[N2-5]} -- Characters 2 to 5 from the original name (totals 4 characters). 
+                                    The first letter is accessed with 1;\NC \NR
+    \NC \color[maincolor]{[C]}      \NC A counter, as defined in the Define counter field. \NC \NR
+\stoptabulate
+
+\stopsubsection
+
+
+\startsubsection[title={Define counter [C]}]
+Allows defining the counter for the \type{[C]} placeholder(s).
+
+\starttabulate[|r|p|]
+    \NC \bf{Start at:}  \NC Number of the first device.; \NC \NR
+    \NC \bf{Step by:}   \NC The counter is increased by this value.; \NC \NR
+    \NC \bf{Digits:}    \NC Width of the counter field.
+                            If the value is more than 1, the script will insert leading
+                            zeros to get a fixed width number field. \NC \NR
+\stoptabulate
+
+
+
+
+\stopsubsection
+
+
+
+\stopsection
+
+\stopcomponent

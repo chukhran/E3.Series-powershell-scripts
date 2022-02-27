@@ -1,0 +1,43 @@
+% language=uk
+
+\startcomponent help-why-ps
+
+\environment help-environment
+
+\startsection[title=Why PowerShell]
+
+For comfortable operation, the renaming process is required user interaction, in other words, GUI. There are a few solutions to get a GIU for Add-ons of \E\, however, for that need either Add-on should be compiled or new software should be installed. Using PowerShell solves the above problems: ps-scripts can have GUI without any compilation, PowerShell is also installed by default under any modern Windows OS.
+
+
+\startsubsection[title=PowerShell scripts execution policy]
+
+    In PowerShell, script execution is disabled by default. The goal of the execution policy mechanism is to reduce the ways that PowerShell can be exploited by an attacker, allowing a user to operate more securely.
+
+    You can see the current execution policy by running \type{Get-ExecutionPolicy}:
+
+    \starttyping
+    PS> Get-Executionpolicy
+    Restricted
+    \stoptyping
+
+    Here you see that the policy is set to \type{Restricted}.
+
+    To modify it to run \type{BatchDeviceRenaming.ps1}, run \type{Set-ExecutionPolicy} in an elevated session and follow the prompts:
+
+    \starttyping
+    PS> Set-ExecutionPolicy RemoteSigned
+    \stoptyping
+
+    or (not recommended):
+
+    \starttyping
+    PS> Set-ExecutionPolicy Unrestricted
+    \stoptyping
+
+    \type{Set-ExecutionPolicy} command usually must be run by an administrator, because regular users don’t have permission to write to that portion of the Registry.
+
+\stopsubsection
+
+\stopsection
+
+\stopcomponent

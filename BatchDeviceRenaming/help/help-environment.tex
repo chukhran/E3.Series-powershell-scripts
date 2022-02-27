@@ -1,0 +1,96 @@
+\startenvironment help-environment
+
+\setupdocument
+  [metadata:author=Dmytro Chukhran,
+   metadata:title=Batch Device Renaming,
+   author=Dmytro Chukhran,
+   affiliation=,
+   location=,
+   title=Batch Device Renaming,
+   extra=a script for E3.Series,
+   support=https://github.com/chukhran/E3.Series-powershell-scripts,
+   website=https://github.com/chukhran/E3.Series-powershell-scripts]
+
+\setupbodyfont
+  [pagella, 12pt]
+
+\usemodule
+  [abr-02,narrowtt]
+
+%\definecolor [maincolor] [.6(red)]
+\definecolor [maincolor] [darkred]
+\definecolor [titlepagecolor][h=ef493c]
+
+\setupwhitespace
+  [big]
+
+\setuptyping
+  [color=maincolor]
+
+\setuptype
+  [color=maincolor]
+
+\setupitemgroup
+  [itemize]
+  [each]
+  [color=maincolor,
+   symcolor=maincolor]
+
+\setupitemize
+  [each][1,joinedup][indenting={yes,first,big}]
+
+
+\setupcaptions
+  [color=black]
+
+\setuphead
+  [section]
+  %[before={\blank[2*big]},
+  [before={\page},
+   after=\blank,
+   style=\bfb,
+   color=maincolor]
+
+\setuphead
+  [subsection]
+  [before=\blank,
+   after=\blank,
+   style=\bfa,
+   color=maincolor]
+
+\setuplayout
+  [width=middle,
+   height=middle,
+   header=0cm,
+   topspace=2cm,
+   bottomspace=1cm,
+   footer=1cm,
+   footerdistance=.5cm]
+
+\setupfootertexts
+  [][{\getmarking[section]\hbox to 2em{\hss\pagenumber}}]
+  [{\hbox to 2em{\pagenumber\hss}\getmarking[section]}][]
+
+%\setuppagenumbering
+%  [alternative=doublesided]
+
+\startMPextensions
+  % color maincolor ; maincolor := \MPcolor{maincolor} ;
+    string maincolor ; maincolor := "maincolor" ;
+\stopMPextensions
+
+\setupinteraction
+  [state=start,
+   color=blue,
+   contrastcolor=,
+   style=]
+
+
+\setupexternalfigures
+[directory=images, location=global]
+
+% E3.series
+\define\E{E$^{3}$.Series}
+
+
+\stopenvironment
